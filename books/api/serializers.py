@@ -2,6 +2,8 @@ from rest_framework import serializers
 from books.models import Book, Comment
 
 class CommentSerializer(serializers.ModelSerializer):
+    #We can use this to get the name of the user.
+    commenter = serializers.StringRelatedField(read_only=True)
     class Meta:
         model = Comment
         #fields = '__all__'
