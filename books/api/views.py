@@ -9,11 +9,13 @@ from rest_framework.exceptions import ValidationError
 from books.models import Book, Comment
 from books.api.serializers import CommentSerializer, BookSerializer
 from books.api.permissions import IsAdminUserOrReadOnly, IsCommenterOrReadOnly
+from books.api.pagination import MySPagination, MyLPagination
 
 class BookListCreateAPIView(generics.ListCreateAPIView):
     queryset = Book.objects.all()
     serializer_class = BookSerializer
     permission_classes = [IsAdminUserOrReadOnly]
+    pagination_class = MySPagination
 
 #We dont need to specify any pk because GenericAPIView already knows that we are going to use a pk.
 class BookDetailAPIView(generics.RetrieveUpdateDestroyAPIView):

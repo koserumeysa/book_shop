@@ -132,3 +132,11 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 #         'rest_framework.permissions.IsAuthenticated',
 #     ]
 # } 
+
+#We can use this for pagination.
+#We dont use this because we want to specify the pagination for each view.
+# REST_FRAMEWORK = {
+     #Also if we want, we can use our own pagination class.
+#     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+#     'PAGE_SIZE': 10,
+# }
